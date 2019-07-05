@@ -60,7 +60,7 @@ app.post("/campgrounds",middlewareObj.isLoggedIn,function(req,res){
         Campground.create(newCampground,function(err){
             if(err)
             {
-            console.log(err);  
+            console.log(err);
             }
             else
             {req.flash("success","Successfully created campground!!!");
