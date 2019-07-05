@@ -13,8 +13,8 @@ var seedDB = require("./seeds");
 var app = express();
 
 
-//mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb+srv://yelpcamp:bbnnnsharma2825@cluster0-gtg6i.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect("mongodb+srv://yelpcamp:bbnnnsharma2825@cluster0-gtg6i.mongodb.net/test?retryWrites=true&w=majority");
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.set("view engine","ejs");
