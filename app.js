@@ -13,8 +13,8 @@ var seedDB = require("./seeds");
 var app = express();
 
 
-//mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb+srv://nitish:sharma@cluster0-raugf.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect("mongodb+srv://nitish:sharma@cluster0-raugf.mongodb.net/test?retryWrites=true&w=majority");
 
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -33,6 +33,12 @@ app.use(require("express-session")({
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
+
+app.use('/',(req,res,next)=>{
+    console.log(`Hi I am Adhikansh Mittal`);
+    next();
+})
+
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
